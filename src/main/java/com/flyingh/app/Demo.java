@@ -8,6 +8,13 @@ import static org.junit.Assert.*;
 
 public class Demo {
 	@Test
+	public void test4(){
+		System.out.println(StringUtils.strip("abccba", "ab"));
+		System.out.println(StringUtils.stripStart("abccba", "ab"));
+		System.out.println(StringUtils.stripEnd("abccba", "ab"));
+	}
+	
+	@Test
 	public void test3(){
 		System.out.println(StringUtils.strip("a a b c \t"));
 		System.out.println(StringUtils.strip("a a b c \t", " "));
