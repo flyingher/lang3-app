@@ -10,6 +10,13 @@ import static org.junit.Assert.*;
 
 public class Demo {
 	@Test
+	public void test6() {
+		Assert.assertEquals(0, "abc".indexOf(""));
+		Assert.assertEquals(0, "".indexOf(""));
+		System.out.println("".indexOf("", 0));//0
+	}
+
+	@Test
 	public void test5() {
 		String[] strs = { " abc", "cab ", " cba\t" };
 		System.out.println(Arrays.asList(strs));
