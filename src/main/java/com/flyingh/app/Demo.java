@@ -1,19 +1,23 @@
 package com.flyingh.app;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Arrays;
 
 import junit.framework.Assert;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class Demo {
 	@Test
 	public void test6() {
 		Assert.assertEquals(0, "abc".indexOf(""));
 		Assert.assertEquals(0, "".indexOf(""));
-		System.out.println("".indexOf("", 0));//0
+		Assert.assertEquals(0, "".indexOf(""));
+		System.out.println("abc".indexOf("", 5));
+		Assert.assertEquals(3, "abc".indexOf("", 5));
 	}
 
 	@Test
