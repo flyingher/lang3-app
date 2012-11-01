@@ -8,24 +8,25 @@ import static org.junit.Assert.*;
 
 public class Demo {
 	@Test
-	public void test4(){
-		System.out.println(StringUtils.strip("abccba", "ab"));
-		System.out.println(StringUtils.stripStart("abccba", "ab"));
-		System.out.println(StringUtils.stripEnd("abccba", "ab"));
+	public void test4() {
+		assertEquals("cc", StringUtils.strip("abccba", "ab"));
+		assertEquals("ccba", StringUtils.stripStart("abccba", "ab"));
+		assertEquals("abcc", StringUtils.stripEnd("abccba", "ab"));
+		assertEquals(" abc",StringUtils.strip(" abcxyz","xyz"));
 	}
-	
+
 	@Test
-	public void test3(){
+	public void test3() {
 		System.out.println(StringUtils.strip("a a b c \t"));
 		System.out.println(StringUtils.strip("a a b c \t", " "));
 		System.out.println(StringUtils.stripStart("abcde", "a"));
 		System.out.println(StringUtils.stripStart("aaabcde", "a"));
 		System.out.println(StringUtils.stripStart("aaabcde", "adcb"));
-		String str=" abc\t";
-		assertTrue(str.length()==5);
-		assertTrue(StringUtils.strip(str).length()==3);
+		String str = " abc\t";
+		assertTrue(str.length() == 5);
+		assertTrue(StringUtils.strip(str).length() == 3);
 	}
-	
+
 	@Test
 	public void test2() {
 		Assert.assertTrue(StringUtils.isBlank("\t"));
