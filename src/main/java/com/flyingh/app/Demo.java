@@ -13,6 +13,9 @@ public class Demo {
 		assertEquals("ccba", StringUtils.stripStart("abccba", "ab"));
 		assertEquals("abcc", StringUtils.stripEnd("abccba", "ab"));
 		assertEquals(" abc",StringUtils.strip(" abcxyz","xyz"));
+		assertEquals(null, StringUtils.strip(null));
+		assertEquals(null, StringUtils.strip(null, "*"));
+		assertEquals("", StringUtils.strip("", "*"));
 	}
 
 	@Test
