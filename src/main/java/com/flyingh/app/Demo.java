@@ -4,6 +4,7 @@ import junit.framework.Assert;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class Demo {
 	@Test
@@ -13,6 +14,9 @@ public class Demo {
 		System.out.println(StringUtils.stripStart("abcde", "a"));
 		System.out.println(StringUtils.stripStart("aaabcde", "a"));
 		System.out.println(StringUtils.stripStart("aaabcde", "adcb"));
+		String str=" abc\t";
+		assertTrue(str.length()==5);
+		assertTrue(StringUtils.strip(str).length()==3);
 	}
 	
 	@Test
