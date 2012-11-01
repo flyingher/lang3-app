@@ -1,5 +1,7 @@
 package com.flyingh.app;
 
+import java.util.Arrays;
+
 import junit.framework.Assert;
 
 import org.apache.commons.lang3.StringUtils;
@@ -8,14 +10,26 @@ import static org.junit.Assert.*;
 
 public class Demo {
 	@Test
+	public void test5() {
+		String[] strs = { " abc", "cab ", " cba\t" };
+		System.out.println(Arrays.asList(strs));
+		StringUtils.stripAll(strs);
+		System.out.println(Arrays.asList(strs));
+		strs = StringUtils.stripAll(strs);
+		System.out.println(Arrays.asList(strs));
+
+	}
+
+	@Test
 	public void test4() {
 		assertEquals("cc", StringUtils.strip("abccba", "ab"));
 		assertEquals("ccba", StringUtils.stripStart("abccba", "ab"));
 		assertEquals("abcc", StringUtils.stripEnd("abccba", "ab"));
-		assertEquals(" abc",StringUtils.strip(" abcxyz","xyz"));
+		assertEquals(" abc", StringUtils.strip(" abcxyz", "xyz"));
 		assertEquals(null, StringUtils.strip(null));
 		assertEquals(null, StringUtils.strip(null, "*"));
 		assertEquals("", StringUtils.strip("", "*"));
+		assertEquals("13", StringUtils.stripEnd("135.55", ".5"));
 	}
 
 	@Test
