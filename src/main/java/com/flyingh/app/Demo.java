@@ -12,6 +12,13 @@ import org.junit.Test;
 
 public class Demo {
 	@Test
+	public void test8(){
+		Assert.assertTrue(StringUtils.equals("a", StringUtils.left("abc", 1)));
+		Assert.assertTrue(StringUtils.equals("ab", StringUtils.right("cab", 2)));
+		Assert.assertTrue(StringUtils.equals("a", StringUtils.mid("cab", 1, 1)));
+	}
+	
+	@Test
 	public void test7() {
 		Assert.assertTrue(StringUtils.contains("", ""));
 		Assert.assertTrue(StringUtils.contains("abc", "bc"));
