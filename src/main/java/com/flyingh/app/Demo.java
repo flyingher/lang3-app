@@ -13,6 +13,13 @@ public class Demo {
 	public void test9() {
 		assertTrue(StringUtils.equals("a",
 				StringUtils.substringBefore("abc", "bc")));
+		assertTrue(StringUtils.equals("bc",
+				StringUtils.substringAfter("abc", "a")));
+		assertEquals("ab", StringUtils.substringBeforeLast("abbc", "b"));
+		assertEquals("c", StringUtils.substringAfterLast("abbc", "b"));
+		assertEquals("cc", StringUtils.substringBetween("abccba", "b"));
+		assertEquals("abc",
+				StringUtils.substringBetween("xabcyxcbay", "x", "y"));
 	}
 
 	@Test
