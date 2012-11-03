@@ -10,6 +10,11 @@ import org.junit.Test;
 
 public class Demo {
 	@Test
+	public void test13() {
+		assertEquals("?,?,?", StringUtils.repeat("?", ",", 3));
+	}
+
+	@Test
 	public void test12() {
 		assertEquals("abc", StringUtils.deleteWhitespace("   ab  c "));
 		assertEquals("ac", StringUtils.remove("abbbbbbc", "b"));
