@@ -10,11 +10,31 @@ import org.junit.Test;
 
 public class Demo {
 	@Test
+	public void test11() {
+		// StringUtils.splitByCharacterType(null) = null
+		// StringUtils.splitByCharacterType("") = []
+		// StringUtils.splitByCharacterType("ab de fg") = ["ab", " ", "de", " ",
+		// "fg"]
+		// StringUtils.splitByCharacterType("ab   de fg") = ["ab", "   ", "de",
+		// " ", "fg"]
+		// StringUtils.splitByCharacterType("ab:cd:ef") = ["ab", ":", "cd", ":",
+		// "ef"]
+		// StringUtils.splitByCharacterType("number5") = ["number", "5"]
+		// StringUtils.splitByCharacterType("fooBar") = ["foo", "B", "ar"]
+		// StringUtils.splitByCharacterType("foo200Bar") = ["foo", "200", "B",
+		// "ar"]
+		// StringUtils.splitByCharacterType("ASFRules") = ["ASFR", "ules"]
+	}
+
+	@Test
 	public void test10() {
 		System.out.println(Arrays.asList("abc cab  abc".split("\\s+")));
 		System.out.println(Arrays.asList(StringUtils.split("abc cab  abc")));
-		System.out.println(Arrays.asList(StringUtils.split("abc.cab.bca", '.')));
-		System.out.println(Arrays.asList(StringUtils.split("a..b.c", '.')));//[a, b, c]
+		System.out
+				.println(Arrays.asList(StringUtils.split("abc.cab.bca", '.')));
+		System.out.println(Arrays.asList(StringUtils.split("a..b.c", '.')));// [a,
+																			// b,
+																			// c]
 		System.out.println(Arrays.asList("a:b:c:".split(":")));
 	}
 
