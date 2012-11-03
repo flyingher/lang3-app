@@ -10,6 +10,15 @@ import org.junit.Test;
 
 public class Demo {
 	@Test
+	public void test10() {
+		System.out.println(Arrays.asList("abc cab  abc".split("\\s+")));
+		System.out.println(Arrays.asList(StringUtils.split("abc cab  abc")));
+		System.out.println(Arrays.asList(StringUtils.split("abc.cab.bca", '.')));
+		System.out.println(Arrays.asList(StringUtils.split("a..b.c", '.')));//[a, b, c]
+		System.out.println(Arrays.asList("a:b:c:".split(":")));
+	}
+
+	@Test
 	public void test9() {
 		assertTrue(StringUtils.equals("a",
 				StringUtils.substringBefore("abc", "bc")));
