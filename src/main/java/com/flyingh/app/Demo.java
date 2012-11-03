@@ -5,32 +5,36 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
-import junit.framework.Assert;
-
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 public class Demo {
 	@Test
-	public void test8(){
-		Assert.assertTrue(StringUtils.equals("a", StringUtils.left("abc", 1)));
-		Assert.assertTrue(StringUtils.equals("ab", StringUtils.right("cab", 2)));
-		Assert.assertTrue(StringUtils.equals("a", StringUtils.mid("cab", 1, 1)));
+	public void test9() {
+		assertTrue(StringUtils.equals("a",
+				StringUtils.substringBefore("abc", "bc")));
 	}
-	
+
+	@Test
+	public void test8() {
+		assertTrue(StringUtils.equals("a", StringUtils.left("abc", 1)));
+		assertTrue(StringUtils.equals("ab", StringUtils.right("cab", 2)));
+		assertTrue(StringUtils.equals("a", StringUtils.mid("cab", 1, 1)));
+	}
+
 	@Test
 	public void test7() {
-		Assert.assertTrue(StringUtils.contains("", ""));
-		Assert.assertTrue(StringUtils.contains("abc", "bc"));
+		assertTrue(StringUtils.contains("", ""));
+		assertTrue(StringUtils.contains("abc", "bc"));
 	}
 
 	@Test
 	public void test6() {
-		Assert.assertEquals(0, "abc".indexOf(""));
-		Assert.assertEquals(0, "".indexOf(""));
-		Assert.assertEquals(0, "".indexOf(""));
+		assertEquals(0, "abc".indexOf(""));
+		assertEquals(0, "".indexOf(""));
+		assertEquals(0, "".indexOf(""));
 		System.out.println("abc".indexOf("", 5));
-		Assert.assertEquals(3, "abc".indexOf("", 5));
+		assertEquals(3, "abc".indexOf("", 5));
 	}
 
 	@Test
@@ -70,12 +74,12 @@ public class Demo {
 
 	@Test
 	public void test2() {
-		Assert.assertTrue(StringUtils.isBlank("\t"));
-		Assert.assertTrue(Character.isWhitespace('\t'));
+		assertTrue(StringUtils.isBlank("\t"));
+		assertTrue(Character.isWhitespace('\t'));
 	}
 
 	@Test
 	public void test() {
-		Assert.assertTrue('\t' < ' ');
+		assertTrue('\t' < ' ');
 	}
 }
