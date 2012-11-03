@@ -15,6 +15,10 @@ public class Demo {
 	public void test15() {
 		assertTrue(ArrayUtils.isEquals(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 }));
 		assertFalse(ArrayUtils.isEquals(new int[] { 1, 2, 3 }, new int[] { 3, 2, 1 }));
+		assertTrue(ArrayUtils.contains(new int[] { 3, 2, 1 }, 1));
+		System.out.println(ArrayUtils.toString(ArrayUtils.removeElement(new int[] { 1, 2, 3 }, 1)));// {2,3}
+		assertTrue(ArrayUtils.isEquals(new int[] { 1, 2 }, ArrayUtils.removeElement(new int[] { 1, 2, 3 }, 3)));
+		assertTrue(ArrayUtils.isEquals(new int[] { 1, 2, 3, 4, 5 }, ArrayUtils.addAll(new int[] { 1, 2, 3 }, 4, 5)));
 	}
 
 	@Test
