@@ -12,6 +12,12 @@ import org.junit.Test;
 
 public class Demo {
 	@Test
+	public void test7() {
+		Assert.assertTrue(StringUtils.contains("", ""));
+		Assert.assertTrue(StringUtils.contains("abc", "bc"));
+	}
+
+	@Test
 	public void test6() {
 		Assert.assertEquals(0, "abc".indexOf(""));
 		Assert.assertEquals(0, "".indexOf(""));
