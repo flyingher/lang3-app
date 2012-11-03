@@ -10,6 +10,12 @@ import org.junit.Test;
 
 public class Demo {
 	@Test
+	public void test12() {
+		assertEquals("abc", StringUtils.deleteWhitespace("   ab  c "));
+		assertEquals("ac", StringUtils.remove("abbbbbbc", "b"));
+	}
+
+	@Test
 	public void test11() {
 		// StringUtils.splitByCharacterType(null) = null
 		// StringUtils.splitByCharacterType("") = []
