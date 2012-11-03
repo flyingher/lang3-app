@@ -1,19 +1,27 @@
 package com.flyingh.app;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 public class Demo {
 	@Test
-	public void test14(){
+	public void test15() {
+		assertTrue(ArrayUtils.isEquals(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 }));
+		assertFalse(ArrayUtils.isEquals(new int[] { 1, 2, 3 }, new int[] { 3, 2, 1 }));
+	}
+
+	@Test
+	public void test14() {
 		assertEquals("a b c d", StringUtils.normalizeSpace("a b  c\td"));
 	}
-	
+
 	@Test
 	public void test13() {
 		assertEquals("?,?,?", StringUtils.repeat("?", ",", 3));
@@ -46,8 +54,7 @@ public class Demo {
 	public void test10() {
 		System.out.println(Arrays.asList("abc cab  abc".split("\\s+")));
 		System.out.println(Arrays.asList(StringUtils.split("abc cab  abc")));
-		System.out
-				.println(Arrays.asList(StringUtils.split("abc.cab.bca", '.')));
+		System.out.println(Arrays.asList(StringUtils.split("abc.cab.bca", '.')));
 		System.out.println(Arrays.asList(StringUtils.split("a..b.c", '.')));// [a,
 																			// b,
 																			// c]
@@ -56,15 +63,12 @@ public class Demo {
 
 	@Test
 	public void test9() {
-		assertTrue(StringUtils.equals("a",
-				StringUtils.substringBefore("abc", "bc")));
-		assertTrue(StringUtils.equals("bc",
-				StringUtils.substringAfter("abc", "a")));
+		assertTrue(StringUtils.equals("a", StringUtils.substringBefore("abc", "bc")));
+		assertTrue(StringUtils.equals("bc", StringUtils.substringAfter("abc", "a")));
 		assertEquals("ab", StringUtils.substringBeforeLast("abbc", "b"));
 		assertEquals("c", StringUtils.substringAfterLast("abbc", "b"));
 		assertEquals("cc", StringUtils.substringBetween("abccba", "b"));
-		assertEquals("abc",
-				StringUtils.substringBetween("xabcyxcbay", "x", "y"));
+		assertEquals("abc", StringUtils.substringBetween("xabcyxcbay", "x", "y"));
 	}
 
 	@Test
