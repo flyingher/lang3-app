@@ -8,9 +8,17 @@ import java.util.Arrays;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.text.translate.EntityArrays;
 import org.junit.Test;
 
 public class Demo {
+	@Test
+	public void test16() {
+		String[][] array = { { "a", "b", "c" }, { "b", "c", "a" }, { "c", "a", "b" } };
+		assertTrue(ArrayUtils.isEquals(new String[][] { { "b", "a" }, { "c", "b" }, { "a", "c" } },
+				EntityArrays.invert(array)));
+	}
+
 	@Test
 	public void test15() {
 		assertTrue(ArrayUtils.isEquals(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 }));
